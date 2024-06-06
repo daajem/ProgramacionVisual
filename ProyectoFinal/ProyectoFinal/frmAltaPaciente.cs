@@ -11,9 +11,8 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
-    public partial class frmAltaDoctor : Form
+    public partial class frmAltaPaciente : Form
     {
-
         SqlConnection Conexion = new SqlConnection();
         SqlCommand Comando;
         SqlDataAdapter Adaptador = null;
@@ -68,83 +67,25 @@ namespace ProyectoFinal
 
         void RefrescarDatos()
         {
-
-            Sql = "select * from doctores";
+            Sql = "select * from pacientes";
             //SqlDataAdapter 
             Adaptador = new SqlDataAdapter(Sql, Conexion);
             Tabla.Clear();
             Adaptador.Fill(Tabla);
         }
-        public frmAltaDoctor()
+        public frmAltaPaciente()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void frmAltaPaciente_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Guardar Paciente
         {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void txtTelefono_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            if (textBox == null)
-                return;
-
-            // Elimina todos los caracteres no numéricos
-            string cleaned = new string(textBox.Text.Where(char.IsDigit).ToArray());
-
-            // Aplicar el formato
-            string formatted = "";
-            int length = cleaned.Length;
-
-            if (length > 0)
-                formatted += cleaned.Substring(0, Math.Min(3, length));
-            if (length > 3)
-                formatted += "-" + cleaned.Substring(3, Math.Min(3, length - 3));
-            if (length > 6)
-                formatted += "-" + cleaned.Substring(6, Math.Min(2, length - 6));
-            if (length > 8)
-                formatted += "-" + cleaned.Substring(8, Math.Min(2, length - 8));
-
-            // Guardar la posición actual del cursor
-            int cursorPosition = textBox.SelectionStart;
-
-            // Actualizar el texto del TextBox
-            textBox.Text = formatted;
-
-            // Restaurar la posición del cursor
-            textBox.SelectionStart = Math.Min(cursorPosition, formatted.Length);
-
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
-
-
-        }
-        private void button1_Click(object sender, EventArgs e) //Guardar Doctor
-        {
-            Sql = "insert into doctores(identificador, pri_nom, seg_nom, pri_ape, seg_ape, genero, telefono, direccion) " +
+            Sql = "insert into pacientes(identificador, pri_nom, seg_nom, pri_ape, seg_ape, genero, telefono, direccion) " +
                 "values(@identificador,@pri_nom,@seg_nom,@pri_ape,@seg_ape,@genero,@telefono,@direccion)";
 
             using (SqlConnection conn = new SqlConnection("Data Source=" + Servidor + ";" +
@@ -175,9 +116,10 @@ namespace ProyectoFinal
                 }
             }
         }
-        private void button2_Click(object sender, EventArgs e) //Eliminar Doctor
+
+        private void button2_Click(object sender, EventArgs e) //Eliminar paciente
         {
-            Sql = "delete from doctores where identificador=@identificador";
+            Sql = "delete from pacientes where identificador=@identificador";
 
             using (SqlConnection conn = new SqlConnection("Data Source=" + Servidor + ";" +
                                                           "Initial Catalog=" + Base_Datos + ";" +
@@ -200,17 +142,15 @@ namespace ProyectoFinal
                 }
             }
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
-
             this.Close();
-
         }
 
-        private void button4_Click(object sender, EventArgs e) //Editar Doctor
+        private void button4_Click(object sender, EventArgs e) //Editar Paciente
         {
-            Sql = "update doctores set pri_nom=@pri_nom, seg_nom=@seg_nom, pri_ape=@pri_ape, seg_ape=@seg_ape, genero=@genero, telefono=@telefono, direccion=@direccion where identificador=@identificador";
+            Sql = "update pacientes set pri_nom=@pri_nom, seg_nom=@seg_nom, pri_ape=@pri_ape, seg_ape=@seg_ape, genero=@genero, telefono=@telefono, direccion=@direccion where identificador=@identificador";
 
             using (SqlConnection conn = new SqlConnection("Data Source=" + Servidor + ";" +
                                                           "Initial Catalog=" + Base_Datos + ";" +
@@ -241,6 +181,7 @@ namespace ProyectoFinal
                 }
             }
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
             {
@@ -262,6 +203,6 @@ namespace ProyectoFinal
             }
         }
 
-
+        
     }
 }

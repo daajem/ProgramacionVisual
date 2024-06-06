@@ -19,11 +19,26 @@ namespace ProyectoFinal
             consultarDoctores.Show();
         }
 
+        private void registrarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaPaciente altaPaciente = new frmAltaPaciente();
+            altaPaciente.Show();
+        }
+
+        private void consultarPacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarPacientes consultarPacientes = new frmConsultarPacientes();
+            consultarPacientes.Show();
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
