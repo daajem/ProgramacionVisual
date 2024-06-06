@@ -233,7 +233,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(127, 51);
+            button5.Location = new Point(259, 51);
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
             button5.TabIndex = 3;
@@ -243,7 +243,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(46, 51);
+            button4.Location = new Point(178, 51);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 2;
@@ -253,7 +253,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(127, 22);
+            button2.Location = new Point(259, 22);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 1;
@@ -263,7 +263,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(46, 22);
+            button1.Location = new Point(178, 22);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -291,7 +291,8 @@
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAltaDoctor";
-            Text = "frmAltaDoctor";
+            Text = "Alta Doctor";
+            Load += frmAltaDoctor_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

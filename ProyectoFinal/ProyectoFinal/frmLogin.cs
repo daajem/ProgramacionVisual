@@ -114,7 +114,12 @@ namespace ProyectoFinal
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

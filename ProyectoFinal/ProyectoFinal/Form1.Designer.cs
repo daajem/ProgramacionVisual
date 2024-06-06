@@ -45,7 +45,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, editarToolStripMenuItem, verToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, verToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -78,12 +78,14 @@
             agregarCitaToolStripMenuItem.Name = "agregarCitaToolStripMenuItem";
             agregarCitaToolStripMenuItem.Size = new Size(168, 22);
             agregarCitaToolStripMenuItem.Text = "Agregar Cita";
+            agregarCitaToolStripMenuItem.Click += agregarCitaToolStripMenuItem_Click;
             // 
             // editarToolStripMenuItem
             // 
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(49, 20);
-            editarToolStripMenuItem.Text = "Editar";
+            editarToolStripMenuItem.Size = new Size(68, 20);
+            editarToolStripMenuItem.Text = "Contacto";
+            editarToolStripMenuItem.Click += editarToolStripMenuItem_Click;
             // 
             // verToolStripMenuItem
             // 
@@ -111,6 +113,7 @@
             citasToolStripMenuItem.Name = "citasToolStripMenuItem";
             citasToolStripMenuItem.Size = new Size(178, 22);
             citasToolStripMenuItem.Text = "Citas";
+            citasToolStripMenuItem.Click += citasToolStripMenuItem_Click;
             // 
             // button1
             // 

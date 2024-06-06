@@ -200,7 +200,7 @@ namespace ProyectoFinal
                 }
             }
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -262,6 +262,9 @@ namespace ProyectoFinal
             }
         }
 
+        private void frmAltaDoctor_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

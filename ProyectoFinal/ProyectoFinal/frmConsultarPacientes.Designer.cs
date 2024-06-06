@@ -75,7 +75,7 @@
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmConsultarPacientes";
-            Text = "frmConsultarPacientes";
+            Text = "Consultar Pacientes";
             Load += frmConsultarPacientes_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

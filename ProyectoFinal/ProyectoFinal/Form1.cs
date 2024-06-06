@@ -31,6 +31,19 @@ namespace ProyectoFinal
             consultarPacientes.Show();
 
         }
+        private void agregarCitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frnAltaCita altaCita = new frnAltaCita();
+            altaCita.Show();
+
+        }
+        private void citasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarCitas consultarCitas = new frmConsultarCitas();
+            consultarCitas.Show();
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -39,6 +52,12 @@ namespace ProyectoFinal
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmContacto contacto = new frmContacto();
+            contacto.Show();
         }
     }
 }
